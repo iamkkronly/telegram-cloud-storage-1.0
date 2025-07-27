@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Telegram Cloud Storage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-center p-10">
+  <h1 class="text-3xl font-bold mb-4">☁️ Telegram Cloud Storage (Saved Messages)</h1>
+  <form action="/upload" method="POST" enctype="multipart/form-data" class="p-4 bg-white shadow rounded max-w-lg mx-auto">
+    <input type="file" name="file" class="p-2 border mb-4 w-full" required>
+    <button class="bg-blue-600 text-white px-4 py-2 rounded">Upload</button>
+  </form>
+  <p class="mt-4"><a href="/list" class="text-blue-600 underline">📂 View Uploaded Files</a></p>
+</body>
+</html>
