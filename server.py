@@ -5,14 +5,17 @@ from flask import Flask, request, send_file
 from telethon import TelegramClient
 import os, asyncio
 
+# ✅ Your Telegram API credentials
 API_ID = 20110837
 API_HASH = "b9658b136c2b71af2bdb7497649ace5c"
 
-# ✅ Use session file created locally
+# ✅ Use session file (must be created locally the first time)
 client = TelegramClient("session", API_ID, API_HASH)
-loop = asyncio.get_event_loop()
-loop.run_until_complete(client.start())  # No phone number, uses session.session
 
+loop = asyncio.get_event_loop()
+loop.run_until_complete(client.start())  # Will use saved session
+
+# ✅ Flask app setup
 app = Flask(__name__)
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
